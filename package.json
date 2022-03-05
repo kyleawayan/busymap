@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/kyleawayan/busymap#readme",
   "workspaces": [
-    "apps/**",
-    "reciever"
+    "apps/*",
+    "receiver"
   ]
 }
