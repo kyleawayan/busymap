@@ -10,6 +10,8 @@ region = ""
 
 bucket_name     = ""
 bucket_location = ""
+
+cors_origins = ["http://localhost:3000", ""]
 ```
 
 3. `terraform apply --var-file "bm.tfvars"`
