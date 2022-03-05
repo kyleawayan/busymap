@@ -1,3 +1,4 @@
+import Head from "next/head";
 import MapViewer from "../components/MapViewer/MapViewer";
 
 const INITIAL_VIEW_STATE = {
@@ -21,6 +22,10 @@ function getTooltip({ tile, bitmap }) {
 export default function Home() {
   return (
     <div>
+      <Head>
+        <title>UC Merced — BusyMap</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <MapViewer
         INITIAL_VIEW_STATE={INITIAL_VIEW_STATE}
         ROOT_URL={ROOT_URL}
