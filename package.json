@@ -1,0 +1,22 @@
+{
+  "name": "busymap",
+  "version": "0.1.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyleawayan/busymap.git"
+  },
+  "keywords": [],
+  "author": "Kyle Awayan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kyleawayan/busymap/issues"
+  },
+  "homepage": "https://github.com/kyleawayan/busymap#readme",
+  "workspaces": [
+    "apps/**",
+    "reciever"
+  ]
+}
