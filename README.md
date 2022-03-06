@@ -44,7 +44,6 @@ create table locations
 	roomName varchar not null,
 	"desc" varchar,
 	building_id int not null;
-);
 
 create unique index locations_id_uindex
 	on locations (id);

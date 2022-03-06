@@ -10,6 +10,8 @@
   "author": "Kyle Awayan",
   "license": "ISC",
   "dependencies": {
-    "@abandonware/noble": "^1.9.2-15"
+    "@abandonware/noble": "^1.9.2-15",
+    "dotenv": "^16.0.0",
+    "pg": "^8.7.3"
   }
 }
