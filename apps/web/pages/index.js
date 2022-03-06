@@ -58,13 +58,17 @@ export default function Home({ buildings }) {
     setSelectedBuilding(marker.object);
   };
 
+  const onNonMarkerClick = () => {
+    setCardOpen(false);
+  };
+
   return (
     <div>
       <Head>
         <title>UC Merced — BusyMap</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {selectedBuilding && (
+      {cardOpen && selectedBuilding && (
         <div>
           <InfoCard building={selectedBuilding} />
         </div>
@@ -76,8 +80,8 @@ export default function Home({ buildings }) {
         initZoom={15}
         getTooltip={getTooltip}
         buildings={buildings}
-        tileLayerPickable={false}
         onMarkerClick={onBuildingClick}
+        onNonMarkerClick={onNonMarkerClick}
       />
     </div>
   );

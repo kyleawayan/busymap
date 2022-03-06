@@ -17,8 +17,8 @@ export default function MapViewer({
   getTooltip,
   initZoom,
   buildings,
-  tileLayerPickable,
   onMarkerClick,
+  onNonMarkerClick,
 }) {
   const [dimensions, setDimensions] = useState(null);
 
@@ -54,7 +54,7 @@ export default function MapViewer({
   const tileLayer =
     dimensions &&
     new TileLayer({
-      pickable: tileLayerPickable,
+      pickable: true,
       tileSize: dimensions.tileSize,
       autoHighlight: autoHighlight,
       highlightColor: [60, 60, 60, 100],
@@ -62,6 +62,7 @@ export default function MapViewer({
       maxZoom: 0,
       coordinateSystem: COORDINATE_SYSTEM.CARTESIAN,
       extent: [0, 0, dimensions.width, dimensions.height],
+      onClick: () => onNonMarkerClick(),
       getTileData: ({ x, y, z }) => {
         return load(
           `${ROOT_URL}/${fileName}_files/${z + initZoom}/${x}_${y}.jpeg`
