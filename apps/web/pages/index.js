@@ -17,6 +17,10 @@ export default function Home() {
           <h3>Welcome to the new way to find study spaces</h3>
         </p>
         <p>Try it out with one of the dorm buildings at UC Merced!</p>
+        <p>
+          <b>Disclaimer:</b> Due to not having explicit permission yet from
+          campus to place devices around the rooms, data is simulated for now.
+        </p>
         <Link href="/ucmerced">
           <a className={styles.card}>
             <h2>Find a study room &rarr;</h2>
