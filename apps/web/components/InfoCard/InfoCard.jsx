@@ -1,7 +1,10 @@
 import React from "react";
+import useSWR from "swr";
 
 import styles from "./InfoCard.module.css";
 import LocationCard from "./LocationCard/LocationCard";
+
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function InfoCard({ building }) {
   console.log(building);
