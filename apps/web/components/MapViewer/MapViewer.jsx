@@ -6,7 +6,7 @@ import { load } from "@loaders.gl/core";
 import { clamp } from "math.gl";
 
 const ICON_MAPPING = {
-  marker: { x: 0, y: 0, width: 128, height: 128, mask: true },
+  marker: { x: 0, y: 0, width: 512, height: 512, mask: true },
 };
 
 export default function MapViewer({
@@ -20,6 +20,7 @@ export default function MapViewer({
   tileLayerPickable,
 }) {
   const [dimensions, setDimensions] = useState(null);
+  console.log(buildings);
 
   useEffect(() => {
     const getMetaData = async () => {
@@ -92,7 +93,7 @@ export default function MapViewer({
     // iconAtlas and iconMapping are required
     // getIcon: return a string
     iconAtlas:
-      "https://raw.githubusercontent.com/visgl/deck.gl-data/master/website/icon-atlas.png",
+      "https://upload.wikimedia.org/wikipedia/commons/1/17/LocationLogo.png",
     iconMapping: ICON_MAPPING,
     getIcon: (d) => "marker",
     sizeScale: 10,

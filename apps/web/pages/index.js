@@ -11,12 +11,21 @@ const ROOT_URL =
   "https://storage.googleapis.com/ucmerced_bm_maptiles/merced_map";
 const fileName = "merced_map";
 
-function getTooltip({ tile, bitmap, coordinate }) {
-  if (tile && bitmap) {
+// For showing tile/map coordinates
+// function getTooltip({ tile, bitmap, coordinate }) {
+//   if (tile && bitmap) {
+//     return `\
+//     tile: x: ${tile.x}, y: ${tile.y}, z: ${tile.z}
+//     (${bitmap.pixel[0]},${bitmap.pixel[1]}) in ${bitmap.size.width}x${bitmap.size.height}
+//     map coordaintes: ${coordinate[0]}, ${coordinate[1]}`;
+//   }
+//   return null;
+// }
+
+function getTooltip({ object }) {
+  if (object) {
     return `\
-    tile: x: ${tile.x}, y: ${tile.y}, z: ${tile.z}
-    (${bitmap.pixel[0]},${bitmap.pixel[1]}) in ${bitmap.size.width}x${bitmap.size.height}
-    map coordaintes: ${coordinate[0]}, ${coordinate[1]}`;
+    ${object.name}`;
   }
   return null;
 }
