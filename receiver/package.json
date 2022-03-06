@@ -1,6 +1,6 @@
 {
   "name": "bm-receiver",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,6 +10,8 @@
   "author": "Kyle Awayan",
   "license": "ISC",
   "dependencies": {
-    "@abandonware/noble": "^1.9.2-15"
+    "@abandonware/noble": "^1.9.2-15",
+    "dotenv": "^16.0.0",
+    "pg": "^8.7.3"
   }
 }

@@ -1,16 +1,13 @@
-# busymap
+# BusyMap
 
-## backend steps
+Find which rooms are busy! Use this to find if the study rooms or laundry rooms at your college are busy.
 
-1. create dzi of map
-2. fill terraform/bm.tfvars with stuff
+Raspberry Pis placed in rooms are used to detect bluetooth devices around and approximate how many people are in the room in real time.
 
-```
-region = ""
+## Sample at UC Merced
 
-bucket_name     = ""
-bucket_location = ""
-```
+https://busymap.tech/
 
-3. `terraform apply --var-file "bm.tfvars"`
-4. upload dzi to bucket, inside of a folder
+## Setup
+
+Please check out the [wiki](https://github.com/kyleawayan/busymap/wiki)!

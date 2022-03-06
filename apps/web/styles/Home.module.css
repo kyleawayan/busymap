@@ -70,7 +70,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
+  max-width: 1000px;
 }
 
 .card {
@@ -113,4 +113,35 @@
     width: 100%;
     flex-direction: column;
   }
+}
+
+.tColor{
+  color: #297DB3;
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+}
+
+.container1{
+  background-color:rgb(255, 255, 255);
+  height: 200px; 
+  bottom: 100px;
+  width: 100%; 
+  text-align: center;
+}
+.container2{
+  background-color:rgb(232, 232, 238);
+  height: 200px;
+  bottom: 100px;
+  width: 100%; 
+  text-align: center;
+  
+}
+
+.firstContainer{
+  background-color:rgb(232, 232, 238);
+  height: 200px;
+  bottom: 100px;
+  width: 100%; 
+  text-align: center;
 }

@@ -2,7 +2,11 @@ variable "region" {
   type = string
 }
 
+variable "project_id" {
+  type = string
+}
+
 provider "google" {
-  project = "busymap-343221"
+  project = var.project_id
   region  = var.region
 }
