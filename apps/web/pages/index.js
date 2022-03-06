@@ -53,9 +53,9 @@ export default function Home({ buildings }) {
   const [cardOpen, setCardOpen] = useState(false);
   const [selectedBuilding, setSelectedBuilding] = useState();
 
-  const onBuildingClick = (building) => {
+  const onBuildingClick = (marker) => {
     setCardOpen(true);
-    setSelectedBuilding(building);
+    setSelectedBuilding(marker.object);
   };
 
   return (
@@ -72,7 +72,7 @@ export default function Home({ buildings }) {
               ...transitionStyles[state],
             }}
           >
-            <InfoCard />
+            <InfoCard building={selectedBuilding} />
           </div>
         )}
       </Transition>

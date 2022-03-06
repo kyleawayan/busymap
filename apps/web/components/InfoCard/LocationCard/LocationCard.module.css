@@ -1,0 +1,24 @@
+.locationCard {
+  outline: 1px lightgray solid;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.number {
+  font-size: 2em;
+}
+
+.devices {
+  font-size: 15px;
+}
+
+.locationCard h2 {
+  margin-top: 0;
+  font-size: 20px;
+  margin-bottom: 3px;
+}
+
+.locationCard p {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
