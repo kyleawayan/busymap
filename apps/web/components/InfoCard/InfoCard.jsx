@@ -16,6 +16,7 @@ export default function InfoCard({ building }) {
   return (
     <div className={styles.infoCard}>
       <h1 className={styles.container}>{building?.name}</h1>
+      <p>These stats refresh automatically.</p>
       {data &&
         data.locations.map((location) => (
           <LocationCard
