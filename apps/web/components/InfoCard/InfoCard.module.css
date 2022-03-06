@@ -3,8 +3,12 @@
   position: absolute;
   left: 0;
   height: 100%;
-  width: 408px;
+  width: 300px;
   background-color: white;
   transition: 1s;
   box-shadow: 0 1px 2px rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+}
+
+.container {
+  margin: 10px;
 }
