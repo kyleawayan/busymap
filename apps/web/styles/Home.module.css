@@ -70,7 +70,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
+  max-width: 1000px;
 }
 
 .card {
@@ -124,9 +124,24 @@
 
 .container1{
   background-color:rgb(255, 255, 255);
-  padding: 200px 100rem;
+  height: 200px; 
+  bottom: 100px;
+  width: 100%; 
+  text-align: center;
 }
 .container2{
   background-color:rgb(232, 232, 238);
-  padding: 200px 100rem;
+  height: 200px;
+  bottom: 100px;
+  width: 100%; 
+  text-align: center;
+  
+}
+
+.firstContainer{
+  background-color:rgb(232, 232, 238);
+  height: 200px;
+  bottom: 100px;
+  width: 100%; 
+  text-align: center;
 }

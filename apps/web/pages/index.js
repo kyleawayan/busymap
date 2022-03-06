@@ -13,59 +13,69 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.tColor}>
-          
           BusyMaps
         </h1>
+      
         <p className={styles.description}>
-          Welcome to the new way to find study spaces 
-
+          <h3>Welcome to the new way to find study spaces </h3>
         </p>
 
-        <div className={styles.grid}>
-
-          <div className={styles.container1}>
-            descriptor
-          </div> 
-          <div className={styles.container2}>
-            Time saving 
-          </div> 
-          <div className={styles.container1}>
-            Stress relieving
-          </div> 
-          <div className={styles.container2}>
-            More studyding
-          </div> 
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
+        <a
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className={styles.card}
           >
-            <h2>Deploy &rarr;</h2>
+            <h2>Find a study room &rarr;</h2>
             <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+              Quickly find an available study room or lounge!
             </p>
           </a>
+        <p> </p> 
+        <div className={styles.grid}>
+
+          <div className={styles.firstContainer}>
+            <p>
+              <h3>How this helps </h3>
+              <p>BusyMaps is a new way to help make it easy for college students to find the perfect spot to study without all the hassle. No more walking back and forth across campus carrying all your things and without a secure spot to study.</p> 
+            </p>
+          </div> 
+          <div className={styles.container1}>
+            <p>
+              <h3>Time Efficiency</h3>
+              <p>BusyMaps saves time for students by reducing their time searching for a lounge to a minimum. With just a click of a button, availble study spots can easily be found.</p>
+            </p> 
+            
+             
+          </div> 
+          <div className={styles.container2}>
+          {/* <div style={{position: "absolute"}}>           
+            <Image src="/sun.jpg" 
+            width={200}
+            height={200}
+            priority
+            />
+            </div> */}
+            <h3>Stress relieving</h3> 
+            <p> Students already have alot to worry about, finding a spot to study shouldn't be another on their agenda. </p>
+            
+            
+          </div> 
+          <div className={styles.container1}>
+            <h3> More studying</h3>
+            <p> With less stress and more time available, students can spend more time focusing on studying and the important parts of their education.  </p>
+          </div> 
+
+          
         </div>
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
+        <p>
+          Powered by {" "}
+          <b>UC Merced Students</b>
+          {/* <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
+          </span> */}
+        </p>
       </footer>
     </div>
   )
