@@ -1,6 +1,9 @@
+import React, { useState } from "react";
 import Head from "next/head";
 import MapViewer from "../components/MapViewer/MapViewer";
 import db from "../pages/api/db";
+import InfoCard from "../components/InfoCard/InfoCard";
+import { Transition } from "react-transition-group";
 
 const INITIAL_VIEW_STATE = {
   target: [20000, 20000, 0],
@@ -30,13 +33,49 @@ function getTooltip({ object }) {
   return null;
 }
 
+const duration = 300;
+
+const defaultStyle = {
+  transition: `opacity ${duration}ms ease-in-out`,
+  opacity: 0,
+  zIndex: 999,
+  backgroundColor: "white",
+};
+
+const transitionStyles = {
+  entering: { opacity: 1 },
+  entered: { opacity: 1 },
+  exiting: { opacity: 0 },
+  exited: { opacity: 0 },
+};
+
 export default function Home({ buildings }) {
+  const [cardOpen, setCardOpen] = useState(false);
+  const [selectedBuilding, setSelectedBuilding] = useState();
+
+  const onBuildingClick = (building) => {
+    setCardOpen(true);
+    setSelectedBuilding(building);
+  };
+
   return (
     <div>
       <Head>
         <title>UC Merced — BusyMap</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Transition in={cardOpen} timeout={duration}>
+        {(state) => (
+          <div
+            style={{
+              ...defaultStyle,
+              ...transitionStyles[state],
+            }}
+          >
+            <InfoCard />
+          </div>
+        )}
+      </Transition>
       <MapViewer
         INITIAL_VIEW_STATE={INITIAL_VIEW_STATE}
         ROOT_URL={ROOT_URL}
@@ -45,6 +84,7 @@ export default function Home({ buildings }) {
         getTooltip={getTooltip}
         buildings={buildings}
         tileLayerPickable={false}
+        onMarkerClick={onBuildingClick}
       />
     </div>
   );

@@ -18,6 +18,7 @@ export default function MapViewer({
   initZoom,
   buildings,
   tileLayerPickable,
+  onMarkerClick,
 }) {
   const [dimensions, setDimensions] = useState(null);
   console.log(buildings);
@@ -100,6 +101,7 @@ export default function MapViewer({
     getPosition: (d) => [d.coord_x, d.coord_y],
     getSize: (d) => 5,
     getColor: (d) => [0, 200, 0],
+    onClick: (d) => onMarkerClick(d),
   });
 
   return (
