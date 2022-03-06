@@ -6,8 +6,8 @@ import InfoCard from "../components/InfoCard/InfoCard";
 import { Transition } from "react-transition-group";
 
 const INITIAL_VIEW_STATE = {
-  target: [20000, 20000, 0],
-  zoom: -6,
+  target: [7000, 13000, 0],
+  zoom: -5,
 };
 
 const ROOT_URL =
