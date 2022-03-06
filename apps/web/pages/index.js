@@ -29,7 +29,7 @@ export default function Home() {
             <p>
               <h3>How this helps </h3>
               <p>
-                BusyMaps is a new way to help make it easy for college students
+                BusyMap is a new way to help make it easy for college students
                 to find the perfect spot to study without all the hassle. No
                 more walking back and forth across campus carrying all your
                 things and without a secure spot to study.
@@ -40,9 +40,9 @@ export default function Home() {
             <p>
               <h3>Time Efficiency</h3>
               <p>
-                BusyMaps saves time for students by reducing their time
-                searching for a lounge to a minimum. With just a click of a
-                button, availble study spots can easily be found.
+                BusyMap saves time for students by reducing their time searching
+                for a lounge to a minimum. With just a click of a button,
+                availble study spots can easily be found.
               </p>
             </p>
           </div>
