@@ -1,5 +1,6 @@
 import React from "react";
 import useSWR from "swr";
+import Skeleton from "react-loading-skeleton";
 
 import styles from "./InfoCard.module.css";
 import LocationCard from "./LocationCard/LocationCard";
@@ -17,6 +18,7 @@ export default function InfoCard({ building }) {
     <div className={styles.infoCard}>
       <h1 className={styles.container}>{building?.name}</h1>
       <p>These stats refresh automatically.</p>
+      {!data && <Skeleton count={5} />}
       {data &&
         data.locations.map((location) => (
           <LocationCard
