@@ -4,9 +4,9 @@ Find which rooms are busy! Use this to find if the study rooms or laundry rooms 
 
 Raspberry Pis placed in rooms are used to detect bluetooth devices around and approximate how many people are in the room in real time.
 
-## Sample at UC Merced
+## Sample map at UC Merced
 
-https://busymap.tech/
+https://busymap.tech/ucmerced
 
 ## Setup
 
