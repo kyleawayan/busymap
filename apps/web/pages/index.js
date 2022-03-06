@@ -14,8 +14,9 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.tColor}>BusyMaps</h1>
         <p className={styles.description}>
-          <h3>Welcome to the new way to find study spaces </h3>
+          <h3>Welcome to the new way to find study spaces</h3>
         </p>
+        <p>Try it out with one of the dorm buildings at UC Merced!</p>
         <Link href="/ucmerced">
           <a className={styles.card}>
             <h2>Find a study room &rarr;</h2>
