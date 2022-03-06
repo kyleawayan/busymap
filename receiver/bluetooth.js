@@ -15,7 +15,10 @@ class BluetoothReciever {
       if (!this.subscribed) {
         this.subscribed = true;
         noble.on("discover", async (peripheral) => {
-          this.devices = this.devices + 1;
+          if (peripheral.rssi > -65) {
+            this.devices = this.devices + 1;
+            console.log("found!!!", peripheral.rssi, peripheral.address);
+          }
         });
       }
 
