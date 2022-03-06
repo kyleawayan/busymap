@@ -4,6 +4,7 @@ import MapViewer from "../components/MapViewer/MapViewer";
 import db from "../pages/api/db";
 import InfoCard from "../components/InfoCard/InfoCard";
 import { Transition } from "react-transition-group";
+import InfoCardTextOnly from "../components/InfoCard/InfoCardTextOnly";
 
 const INITIAL_VIEW_STATE = {
   target: [7000, 13000, 0],
@@ -50,7 +51,7 @@ const transitionStyles = {
 };
 
 export default function UCMerced({ buildings }) {
-  const [cardOpen, setCardOpen] = useState(false);
+  const [cardOpen, setCardOpen] = useState(true);
   const [selectedBuilding, setSelectedBuilding] = useState();
 
   const onBuildingClick = (marker) => {
@@ -68,6 +69,12 @@ export default function UCMerced({ buildings }) {
         <title>UC Merced — BusyMap</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {cardOpen && !selectedBuilding && (
+        <InfoCardTextOnly
+          title="Welcome!"
+          text="Please select a green marker on the map to view more details."
+        />
+      )}
       {cardOpen && selectedBuilding && (
         <div>
           <InfoCard building={selectedBuilding} />
