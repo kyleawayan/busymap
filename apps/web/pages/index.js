@@ -11,7 +11,6 @@ const ROOT_URL =
 const fileName = "merced_map";
 
 function getTooltip({ tile, bitmap, coordinate }) {
-  console.log(coordinate);
   if (tile && bitmap) {
     return `\
     tile: x: ${tile.x}, y: ${tile.y}, z: ${tile.z}
