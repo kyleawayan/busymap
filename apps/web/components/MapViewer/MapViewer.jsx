@@ -21,7 +21,6 @@ export default function MapViewer({
   onMarkerClick,
 }) {
   const [dimensions, setDimensions] = useState(null);
-  console.log(buildings);
 
   useEffect(() => {
     const getMetaData = async () => {

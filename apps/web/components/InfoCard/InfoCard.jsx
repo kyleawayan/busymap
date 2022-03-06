@@ -13,8 +13,6 @@ export default function InfoCard({ building }) {
     { refreshInterval: 5000 }
   );
 
-  console.log(data?.locations);
-
   return (
     <div className={styles.infoCard}>
       <h1 className={styles.container}>{building?.name}</h1>
