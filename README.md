@@ -6,7 +6,7 @@ Raspberry Pis placed in rooms are used to detect bluetooth devices around and ap
 
 ## Sample at UC Merced
 
-https://ucmerced.busymap.tech/
+https://busymap.tech/
 
 ## Setup
 
