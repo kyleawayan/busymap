@@ -9,7 +9,8 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 export default function InfoCard({ building }) {
   const { data, error } = useSWR(
     `/api/getLocationsAndData?building=${building.id}`,
-    fetcher
+    fetcher,
+    { refreshInterval: 5000 }
   );
 
   console.log(data?.locations);
