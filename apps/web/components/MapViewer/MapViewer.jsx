@@ -17,9 +17,9 @@ export default function MapViewer({
   getTooltip,
   initZoom,
   buildings,
+  tileLayerPickable,
 }) {
   const [dimensions, setDimensions] = useState(null);
-  console.log(buildings);
 
   useEffect(() => {
     const getMetaData = async () => {
@@ -53,7 +53,7 @@ export default function MapViewer({
   const tileLayer =
     dimensions &&
     new TileLayer({
-      pickable: true,
+      pickable: tileLayerPickable,
       tileSize: dimensions.tileSize,
       autoHighlight: autoHighlight,
       highlightColor: [60, 60, 60, 100],

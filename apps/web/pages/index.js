@@ -34,8 +34,8 @@ export default function Home({ buildings }) {
         fileName={fileName}
         initZoom={15}
         getTooltip={getTooltip}
-        autoHighlight
         buildings={buildings}
+        tileLayerPickable={false}
       />
     </div>
   );
