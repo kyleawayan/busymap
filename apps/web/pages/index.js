@@ -52,7 +52,7 @@ export default function Home() {
             />
             </div> */}
             <h3>Stress relieving</h3> 
-            <p> Students already have alot to worry about, finding a spot to study shouldn't be another on their agenda. </p>
+            <p> Students already have alot to worry about, finding a spot to study shouldn&apos;t be another on their agenda. </p>
             
             
           </div> 
