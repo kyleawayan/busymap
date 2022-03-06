@@ -25,3 +25,14 @@
   margin-top: 1px;
   margin-bottom: 1px;
 }
+
+@media only screen and (max-width: 600px) {
+  .locationCard h2 {
+    margin-top: 0;
+    font-size: 20px;
+    margin-bottom: 3px;
+  }
+  .number {
+    font-size: 2em;
+  }
+}
