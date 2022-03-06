@@ -14,11 +14,9 @@ export default function Home() {
         <h1 className={styles.tColor}>
           BusyMaps
         </h1>
-      
         <p className={styles.description}>
           <h3>Welcome to the new way to find study spaces </h3>
         </p>
-
         <a
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className={styles.card}
