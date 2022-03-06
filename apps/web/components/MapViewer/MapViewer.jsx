@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import DeckGL, { OrthographicView, COORDINATE_SYSTEM } from "deck.gl";
 import { TileLayer } from "@deck.gl/geo-layers";
-import { BitmapLayer } from "@deck.gl/layers";
+import { BitmapLayer, IconLayer } from "@deck.gl/layers";
 import { load } from "@loaders.gl/core";
 import { clamp } from "math.gl";
+
+const ICON_MAPPING = {
+  marker: { x: 0, y: 0, width: 128, height: 128, mask: true },
+};
 
 export default function MapViewer({
   INITIAL_VIEW_STATE,
@@ -12,8 +16,10 @@ export default function MapViewer({
   autoHighlight = false,
   getTooltip,
   initZoom,
+  buildings,
 }) {
   const [dimensions, setDimensions] = useState(null);
+  console.log(buildings);
 
   useEffect(() => {
     const getMetaData = async () => {
@@ -79,11 +85,27 @@ export default function MapViewer({
       },
     });
 
+  const markerLayer = new IconLayer({
+    id: "icon-layer",
+    data: buildings,
+    pickable: true,
+    // iconAtlas and iconMapping are required
+    // getIcon: return a string
+    iconAtlas:
+      "https://raw.githubusercontent.com/visgl/deck.gl-data/master/website/icon-atlas.png",
+    iconMapping: ICON_MAPPING,
+    getIcon: (d) => "marker",
+    sizeScale: 10,
+    getPosition: (d) => [d.coord_x, d.coord_y],
+    getSize: (d) => 5,
+    getColor: (d) => [0, 200, 0],
+  });
+
   return (
     <div>
       <DeckGL
         views={[new OrthographicView({ id: "ortho" })]}
-        layers={[tileLayer]}
+        layers={[tileLayer, markerLayer]}
         initialViewState={INITIAL_VIEW_STATE}
         controller={true}
         getTooltip={getTooltip}

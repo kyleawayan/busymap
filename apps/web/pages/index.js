@@ -1,5 +1,6 @@
 import Head from "next/head";
 import MapViewer from "../components/MapViewer/MapViewer";
+import db from "../pages/api/db";
 
 const INITIAL_VIEW_STATE = {
   target: [20000, 20000, 0],
@@ -20,7 +21,7 @@ function getTooltip({ tile, bitmap, coordinate }) {
   return null;
 }
 
-export default function Home() {
+export default function Home({ buildings }) {
   return (
     <div>
       <Head>
@@ -34,7 +35,21 @@ export default function Home() {
         initZoom={15}
         getTooltip={getTooltip}
         autoHighlight
+        buildings={buildings}
       />
     </div>
   );
+}
+
+export async function getStaticProps() {
+  // TO DO: get DZI image data here too
+
+  const response = await db.query("SELECT * FROM buildings");
+  const buildings = response.rows;
+
+  return {
+    props: {
+      buildings,
+    },
+  };
 }
