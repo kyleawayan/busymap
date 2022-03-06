@@ -10,11 +10,13 @@ const ROOT_URL =
   "https://storage.googleapis.com/ucmerced_bm_maptiles/merced_map";
 const fileName = "merced_map";
 
-function getTooltip({ tile, bitmap }) {
+function getTooltip({ tile, bitmap, coordinate }) {
+  console.log(coordinate);
   if (tile && bitmap) {
     return `\
     tile: x: ${tile.x}, y: ${tile.y}, z: ${tile.z}
-    (${bitmap.pixel[0]},${bitmap.pixel[1]}) in ${bitmap.size.width}x${bitmap.size.height}`;
+    (${bitmap.pixel[0]},${bitmap.pixel[1]}) in ${bitmap.size.width}x${bitmap.size.height}
+    map coordaintes: ${coordinate[0]}, ${coordinate[1]}`;
   }
   return null;
 }
@@ -31,6 +33,8 @@ export default function Home() {
         ROOT_URL={ROOT_URL}
         fileName={fileName}
         initZoom={15}
+        getTooltip={getTooltip}
+        autoHighlight
       />
     </div>
   );
