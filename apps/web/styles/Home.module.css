@@ -114,3 +114,19 @@
     flex-direction: column;
   }
 }
+
+.tColor{
+  color: #297DB3;
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+}
+
+.container1{
+  background-color:rgb(255, 255, 255);
+  padding: 200px 100rem;
+}
+.container2{
+  background-color:rgb(232, 232, 238);
+  padding: 200px 100rem;
+}
