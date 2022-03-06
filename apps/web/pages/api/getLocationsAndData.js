@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   const response = await db.query(
     `SELECT DISTINCT locations.*, data.* FROM locations, data WHERE building_id = $1 AND
     date = (SELECT MAX(date) FROM data WHERE data.location_id = locations.id)
-    ORDER BY value ASC`,
+    ORDER BY locations."roomName" ASC`,
     [req.query.building]
   );
   const locations = response.rows;
