@@ -55,6 +55,10 @@ a {
   text-decoration: none;
 }
 
+b {
+  font-family: Inter Bold;
+}
+
 * {
   box-sizing: border-box;
 }
