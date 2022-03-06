@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import db from "../pages/api/db";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -15,13 +16,12 @@ export default function Home() {
         <p className={styles.description}>
           <h3>Welcome to the new way to find study spaces </h3>
         </p>
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          className={styles.card}
-        >
-          <h2>Find a study room &rarr;</h2>
-          <p>Quickly find an available study room or lounge!</p>
-        </a>
+        <Link href="/ucmerced">
+          <a className={styles.card}>
+            <h2>Find a study room &rarr;</h2>
+            <p>Quickly find an available study room or lounge!</p>
+          </a>
+        </Link>
         <p> </p>
         <div className={styles.grid}>
           <div className={styles.firstContainer}>
