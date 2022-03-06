@@ -64,18 +64,11 @@ export default function Home({ buildings }) {
         <title>UC Merced — BusyMap</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Transition in={cardOpen} timeout={duration}>
-        {(state) => (
-          <div
-            style={{
-              ...defaultStyle,
-              ...transitionStyles[state],
-            }}
-          >
-            <InfoCard building={selectedBuilding} />
-          </div>
-        )}
-      </Transition>
+      {selectedBuilding && (
+        <div>
+          <InfoCard building={selectedBuilding} />
+        </div>
+      )}
       <MapViewer
         INITIAL_VIEW_STATE={INITIAL_VIEW_STATE}
         ROOT_URL={ROOT_URL}
