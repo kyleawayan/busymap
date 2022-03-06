@@ -10,6 +10,8 @@ region = ""
 
 bucket_name     = ""
 bucket_location = ""
+
+cors_origins = ["http://localhost:3000", ""]
 ```
 
 3. `terraform apply --var-file "bm.tfvars"`
@@ -41,7 +43,7 @@ create table locations
 	id serial,
 	roomName varchar not null,
 	"desc" varchar,
-);
+	building_id int not null;
 
 create unique index locations_id_uindex
 	on locations (id);
