@@ -1,88 +1,86 @@
-import React, { useState } from "react";
+import React from "react";
 import Head from "next/head";
-import MapViewer from "../components/MapViewer/MapViewer";
 import db from "../pages/api/db";
-import InfoCard from "../components/InfoCard/InfoCard";
-import { Transition } from "react-transition-group";
+import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
-const INITIAL_VIEW_STATE = {
-  target: [7000, 13000, 0],
-  zoom: -5,
-};
-
-const ROOT_URL =
-  "https://storage.googleapis.com/ucmerced_bm_maptiles/merced_map";
-const fileName = "merced_map";
-
-// For showing tile/map coordinates
-// function getTooltip({ tile, bitmap, coordinate }) {
-//   if (tile && bitmap) {
-//     return `\
-//     tile: x: ${tile.x}, y: ${tile.y}, z: ${tile.z}
-//     (${bitmap.pixel[0]},${bitmap.pixel[1]}) in ${bitmap.size.width}x${bitmap.size.height}
-//     map coordaintes: ${coordinate[0]}, ${coordinate[1]}`;
-//   }
-//   return null;
-// }
-
-function getTooltip({ object }) {
-  if (object) {
-    return `\
-    ${object.name}`;
-  }
-  return null;
-}
-
-const duration = 300;
-
-const defaultStyle = {
-  transition: `opacity ${duration}ms ease-in-out`,
-  opacity: 0,
-  zIndex: 999,
-  backgroundColor: "white",
-};
-
-const transitionStyles = {
-  entering: { opacity: 1 },
-  entered: { opacity: 1 },
-  exiting: { opacity: 0 },
-  exited: { opacity: 0 },
-};
-
-export default function Home({ buildings }) {
-  const [cardOpen, setCardOpen] = useState(false);
-  const [selectedBuilding, setSelectedBuilding] = useState();
-
-  const onBuildingClick = (marker) => {
-    setCardOpen(true);
-    setSelectedBuilding(marker.object);
-  };
-
-  const onNonMarkerClick = () => {
-    setCardOpen(false);
-  };
-
+export default function Home() {
   return (
-    <div>
+    <div className={styles.container}>
       <Head>
-        <title>UC Merced — BusyMap</title>
+        <title>BusyMap</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {cardOpen && selectedBuilding && (
-        <div>
-          <InfoCard building={selectedBuilding} />
+      <main className={styles.main}>
+        <h1 className={styles.tColor}>BusyMap</h1>
+        <p className={styles.description}>
+          <h3>Welcome to the new way to find study spaces</h3>
+        </p>
+        <p>Try it out with one of the dorm buildings at UC Merced!</p>
+        <Link href="/ucmerced">
+          <a className={styles.card}>
+            <h2>Find a study room &rarr;</h2>
+            <p>Quickly find an available study room or lounge!</p>
+          </a>
+        </Link>
+        <p> </p>
+        <div className={styles.grid}>
+          <div className={styles.firstContainer}>
+            <p>
+              <h3>How this helps </h3>
+              <p>
+                BusyMap is a new way to help make it easy for college students
+                to find the perfect spot to study without all the hassle. No
+                more walking back and forth across campus carrying all your
+                things and without a secure spot to study.
+              </p>
+            </p>
+          </div>
+          <div className={styles.container1}>
+            <p>
+              <h3>Time Efficiency</h3>
+              <p>
+                BusyMap saves time for students by reducing their time searching
+                for a lounge to a minimum. With just a click of a button,
+                availble study spots can easily be found.
+              </p>
+            </p>
+          </div>
+          <div className={styles.container2}>
+            {/* <div style={{position: "absolute"}}>           
+            <Image src="/sun.jpg" 
+            width={200}
+            height={200}
+            priority
+            />
+            </div> */}
+            <h3>Stress relieving</h3>
+            <p>
+              {" "}
+              Students already have alot to worry about, finding a spot to study
+              shouldn&apos;t be another on their agenda.{" "}
+            </p>
+          </div>
+          <div className={styles.container1}>
+            <h3> More studying</h3>
+            <p>
+              {" "}
+              With less stress and more time available, students can spend more
+              time focusing on studying and the important parts of their
+              education.{" "}
+            </p>
+          </div>
         </div>
-      )}
-      <MapViewer
-        INITIAL_VIEW_STATE={INITIAL_VIEW_STATE}
-        ROOT_URL={ROOT_URL}
-        fileName={fileName}
-        initZoom={15}
-        getTooltip={getTooltip}
-        buildings={buildings}
-        onMarkerClick={onBuildingClick}
-        onNonMarkerClick={onNonMarkerClick}
-      />
+      </main>
+
+      <footer className={styles.footer}>
+        <p>
+          Powered by <b>UC Merced Students</b>
+          {/* <span className={styles.logo}>
+            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+          </span> */}
+        </p>
+      </footer>
     </div>
   );
 }
