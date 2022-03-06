@@ -1,12 +1,18 @@
-const noble = require("@abandonware/noble");
+const bt = require("./bluetooth");
 
-noble.on("stateChange", async (state) => {
-  if (state === "poweredOn") {
-    console.log("starting to scan");
-    await noble.startScanningAsync();
-  }
-});
+var reciever = new bt.BluetoothReciever();
 
-noble.on("discover", async (peripheral) => {
-  console.log("device found! distance: ", peripheral.rssi);
-});
+reciever.startScanning();
+
+setInterval(() => {
+  console.log(reciever.devices);
+  reciever.stopScanning();
+  reciever.resetDeviceCount();
+  reciever.startScanning();
+}, 5000);
+// setTimeout(() => {
+//   console.log(reciever.devices);
+//   console.log("sending stop");
+//   reciever.stopScanning();
+//   reciever.startScanning();
+// }, 10000);
