@@ -8,7 +8,7 @@
   },
   "keywords": [],
   "author": "Kyle Awayan",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@abandonware/noble": "^1.9.2-15",
     "dotenv": "^16.0.0",
