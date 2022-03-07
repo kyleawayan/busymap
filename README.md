@@ -12,4 +12,4 @@ https://busymap.tech/ucmerced
 
 ## Setup
 
-Please check out the [wiki](https://github.com/kyleawayan/busymap/wiki)!
+Please check out [this page on the wiki](https://github.com/kyleawayan/busymap/wiki/Setup)!
